@@ -1,7 +1,7 @@
 
 
-let humanScore = 0;
-let computerScore = 0;
+let humanScoreCounter = 0;
+let computerScoreCounter = 0;
 
 // function to return 0/1/3 to randomly choose computer option
 function getRandomInt(maxNum){
@@ -36,49 +36,44 @@ function getHumanChoice(){
   }
 }
 
-
+const humanScore = document.getElementById("humanScore");
+const computerScore = document.getElementById("computerScore");
+const currentComputerChoice = document.getElementById("currentComputerChoice");
+const popResult = document.getElementById("popResult");
+const popupWindow = document.getElementById("popupWindow");
 function playRound(humanChoice, computerChoice) {
   console.log(humanChoice);
   console.log(computerChoice);
   if (humanChoice == "Rock" && computerChoice == "Scissors"){
-    humanScore += 1;
+    humanScoreCounter += 1;
   }
   if (humanChoice == "Scissors" && computerChoice == "Paper"){
-    humanScore += 1;
+    humanScoreCounter += 1;
   }
   if (humanChoice == "Paper" && computerChoice == "Rock"){
-    humanScore += 1;
+    humanScoreCounter += 1;
   }
   if (computerChoice == "Rock" && humanChoice == "Scissors"){
-    computerScore += 1;
+    computerScoreCounter += 1;
   }
   if (computerChoice == "Scissors" && humanChoice == "Paper"){
-    computerScore += 1;
+    computerScoreCounter += 1;
   }
   if (computerChoice == "Paper" && humanChoice == "Rock"){
-    computerScore += 1;
+    computerScoreCounter += 1;
+  }
+  humanScore.innerHTML = `Your Score: ${humanScoreCounter}`;
+  computerScore.innerHTML = `Computer Score: ${computerScoreCounter}`;
+  currentComputerChoice.innerHTML = `Computer Choice: ${computerChoice}`;
+
+  if (humanScoreCounter == 5){
+    popResult.innerHTML = "You Won!";
+  }
+  else if (computerScoreCounter == 5){
+    popResult.innerHTML = "You Lost :(";
   }
 }
 
-
-/*
-function playGame(){
-  for(let i = 0; i<5; i++){
-    playRound(getHumanChoice(), getComputerChoice());
-  }
+function hideMessage(){
+  popupWindow.style.display = "none";
 }
-playGame();
-
-console.log(humanScore);
-console.log(computerScore);
-
-if (humanScore > computerScore){
-  console.log("You Win!");
-}
-if (humanScore < computerScore){
-  console.log("You Lose!");
-}
-if (humanScore == computerScore){
-  console.log("You Tie!");
-}
-*/

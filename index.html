@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- for script -->
-    <script src="script.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <p id="humanScore">Your Score: 0</p>
+        <p id="computerScore">Computer Score: 0</p>
+    </div>
+    <div>
+        <button onclick="playRound('Rock',getComputerChoice())">ROCK</button>
+        <button onclick="playRound('Paper',getComputerChoice())">PAPER</button>
+        <button onclick="playRound('Scissors',getComputerChoice())">SCISSORS</button>
+    </div>
+    <div>
+        <p id="currentComputerChoice">Computer Choice: </p>
+    </div>
+
+    <div class="popupWindow" id="popupWindow">
+        <h2 id="popResult"></h2>
+        <button onclick="hideMessage()">OK</button>
+    </div>
     
+    <!-- for script -->
+    <script src="script.js"></script>
 </body>
 </html>
