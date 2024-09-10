@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p id="humanScore">Your Score: 0</p>
-        <p id="computerScore">Computer Score: 0</p>
+    <div class="gameBoard">
+        <div class="scoreAndChoice">
+            <div class="scoreContainer">
+                <p id="humanScore">Your Score: 0</p>
+                <p id="computerScore">Computer Score: 0</p>
+            </div>
+            <div class="computerChoiceContainer">
+                <p id="currentComputerChoice">Computer Chose: </p>
+            </div>
+        </div>
+        <div class="gameContainer">
+            <div class="buttonContainer">
+                <button class="R" onclick="playRound('Rock',getComputerChoice())">ROCK</button>
+                <button class="P" onclick="playRound('Paper',getComputerChoice())">PAPER</button>
+                <button class="S" onclick="playRound('Scissors',getComputerChoice())">SCISSORS</button>
+            </div>
+            
+        </div>
     </div>
-    <div>
-        <button onclick="playRound('Rock',getComputerChoice())">ROCK</button>
-        <button onclick="playRound('Paper',getComputerChoice())">PAPER</button>
-        <button onclick="playRound('Scissors',getComputerChoice())">SCISSORS</button>
-    </div>
-    <div>
-        <p id="currentComputerChoice">Computer Choice: </p>
-    </div>
-
     <div class="popupWindow" id="popupWindow">
         <h2 id="popResult"></h2>
         <button onclick="hideMessage()">OK</button>
